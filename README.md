@@ -28,34 +28,35 @@ A lightweight and type-safe publish/subscribe library for JavaScript and TypeScr
 
 ## Installation
 
+```shell
+npm i stupid-pub-sub
+```
+
 ### 1. Simple PubSub
 
 The `createPubSub` allows you to create a simple publish/subscribe system.
 
 #### Import
-```
-typescript
+```typescript
 import { createPubSub } from 'simple-pubsub'
 ```
 #### Creating an instance
-```
-typescript
+```typescript
 // Without typing
 const pubsub = createPubSub()
 
 // With TypeScript typing
 interface UserData {
-id: number
-name: string
+  id: number
+  name: string
 }
 
 const pubsub = createPubSub<UserData>()
 ```
 #### Subscribing to events
-```
-typescript
+```typescript
 const subscription = pubsub.subscribe((data) => {
-console.log('Data received:', data)
+  console.log('Data received:', data)
 })
 
 // subscription contains:
@@ -63,13 +64,11 @@ console.log('Data received:', data)
 // - unsubscribe: function to unsubscribe
 ```
 #### Publishing events
-```
-typescript
+```typescript
 pubsub.publish({ id: 1, name: 'John' })
 ```
 #### Unsubscribing
-```
-typescript
+```typescript
 // Method 1: via the returned object
 subscription.unsubscribe()
 
@@ -77,31 +76,30 @@ subscription.unsubscribe()
 pubsub.unsubscribe(subscription.id)
 ```
 #### Complete example
-```
-typescript
+```typescript
 import { createPubSub } from 'simple-pubsub'
 
 interface Message {
-text: string
-timestamp: number
+  text: string
+  timestamp: number
 }
 
 const messageBus = createPubSub<Message>()
 
 // Subscription 1
 const sub1 = messageBus.subscribe((msg) => {
-console.log('Handler 1:', msg.text)
+  console.log('Handler 1:', msg.text)
 })
 
 // Subscription 2
 const sub2 = messageBus.subscribe((msg) => {
-console.log('Handler 2:', msg.text)
+  console.log('Handler 2:', msg.text)
 })
 
 // Publish a message
 messageBus.publish({
-text: 'Hello World',
-timestamp: Date.now()
+  text: 'Hello World',
+  timestamp: Date.now()
 })
 
 // Unsubscribe
@@ -120,7 +118,6 @@ import { createChannelPubSub } from 'simple-pubsub'
 ```
 
 #### Creating an instance
-```
 
 #### Creating an instance
 
