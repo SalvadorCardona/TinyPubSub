@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite dev --port 3000",
-    "build": "vite build",
+    "build": "vite build --base=https://salvadorcardona.github.io/CoookingPubSub",
     "serve": "vite preview",
     "test": "vitest run",
     "lint": "eslint",
