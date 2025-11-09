@@ -1,7 +1,7 @@
 {
-  "name": "tiny-pub-sub",
+  "name": "coooking-pubsub",
   "type": "module",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "packageManager": "pnpm@10.17.1",
   "description": "_description_",
   "author": "Salvador Cardona",
@@ -9,7 +9,7 @@
   "funding": "https://github.com/sponsors/antfu",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SalvadorCardona/TinyPubSub"
+    "url": "git+https://github.com/SalvadorCardona/CookingPubSub"
   },
   "keywords": [],
   "sideEffects": false,

@@ -219,9 +219,7 @@ function usePubSub<T>(pubsub: Index<T>, handler: (data: T) => void) {
     const subscription = pubsub.subscribe(handler)
 
     // Cleanup: unsubscribe on unmount
-    return () => {
-      subscription.unsubscribe()
-    }
+    return subscription.unsubscribe
   }, [pubsub, handler])
 }
 
